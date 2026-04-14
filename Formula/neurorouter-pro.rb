@@ -11,7 +11,7 @@ class NeurorouterPro < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.17.17/neurorouter-pro_0.17.17_darwin_amd64.tar.gz"
-      sha256 "53d04e091fb5d8484f2ea3021d31962a337f7afabc8b8b4d4da3f43d10651319"
+      sha256 "192d5af490ac95c0fc350d6f02ee6e1e9e7557264699831ccbce62a9e8569636"
 
       define_method(:install) do
         bin.install "neurorouter"
@@ -19,7 +19,7 @@ class NeurorouterPro < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.17.17/neurorouter-pro_0.17.17_darwin_arm64.tar.gz"
-      sha256 "f7418b0f8ef0b8d917df6802892292cfdb28186f308eb1d9cdc6f3a1116c9fce"
+      sha256 "fff8ff151857fed72047aacd772088feeeba87552c4225a40a42dc1154613aff"
 
       define_method(:install) do
         bin.install "neurorouter"
@@ -30,14 +30,14 @@ class NeurorouterPro < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.17.17/neurorouter-pro_0.17.17_linux_amd64.tar.gz"
-      sha256 "3df241854cbca2a72682f494702ea9a7956e65ac7ebf11fcf7bb91d046c1f2a9"
+      sha256 "e0136d0a2e8349a707a53f47407c0472c6a95f18824507a700a92a4ead1883d2"
       define_method(:install) do
         bin.install "neurorouter"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.17.17/neurorouter-pro_0.17.17_linux_arm64.tar.gz"
-      sha256 "93628f0d9230531ea86dd2c4586f7b8d0e88376ad3c05ffb907766cf84808cb5"
+      sha256 "ff35599fde55caff18a111ca55c19f5a5dfac4ba5b6c907c2c0eef06e5774510"
       define_method(:install) do
         bin.install "neurorouter"
       end
