@@ -5,21 +5,21 @@
 class NeurorouterPro < Formula
   desc "LLM proxy that keeps AI sessions alive — multiplexing, continuity repair, model routing"
   homepage "https://neurorouter.dev"
-  version "0.18.16"
+  version "0.18.17"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.16/neurorouter-pro_0.18.16_darwin_amd64.tar.gz"
-      sha256 "cdff98ea7c4063c2335e0c4f6e88a4ef98bd1e8a70a03ef1d35f5fba91d6f79f"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.17/neurorouter-pro_0.18.17_darwin_amd64.tar.gz"
+      sha256 "43cd4b1abdf3949165623fab128c9ab63579405978e5a4907f257ccacf33cc99"
 
       define_method(:install) do
         bin.install "neurorouter"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.16/neurorouter-pro_0.18.16_darwin_arm64.tar.gz"
-      sha256 "f3d258588e2b72821bd5e0dc9df9424523fa0e22e300f022312692732373f5d1"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.17/neurorouter-pro_0.18.17_darwin_arm64.tar.gz"
+      sha256 "859b9657e173480dd22af77ae28ab2ed8b57bdcc8dc9ce07139ef92bde0e9985"
 
       define_method(:install) do
         bin.install "neurorouter"
@@ -29,15 +29,15 @@ class NeurorouterPro < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.16/neurorouter-pro_0.18.16_linux_amd64.tar.gz"
-      sha256 "523728e3fc85d88bae4eb20ea8362ba521b923f0d0cee29f82f4dd03b0ab0054"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.17/neurorouter-pro_0.18.17_linux_amd64.tar.gz"
+      sha256 "baf60174420800724770ecb180559471b7ac2b6c72dc49e37fde5dee7dfcc09b"
       define_method(:install) do
         bin.install "neurorouter"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.16/neurorouter-pro_0.18.16_linux_arm64.tar.gz"
-      sha256 "ddbbbd77f473f43d8ab50126ecb6bb1cbc57a1f797d79dc7634a55566303e819"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.18.17/neurorouter-pro_0.18.17_linux_arm64.tar.gz"
+      sha256 "75c6b1677237798cfca887032c0ca2d2cc51482e1d6389bbd724ce65b87baa17"
       define_method(:install) do
         bin.install "neurorouter"
       end
