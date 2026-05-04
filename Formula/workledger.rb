@@ -5,20 +5,20 @@
 class Workledger < Formula
   desc "Hiveram ledger plane for work orders, claims, release bundles, and WEO attribution"
   homepage "https://hiveram.com"
-  version "0.11.0"
+  version "0.12.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.11.0/workledger_0.11.0_darwin_amd64.tar.gz"
-      sha256 "a0cbe2246689c3efe49332615dbac98648edb096244571384a6399a780a6f180"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.12.0/workledger_0.12.0_darwin_amd64.tar.gz"
+      sha256 "c80bc0763cc595ff30154e59ab447c3bd8898953807a107363132f0d282fe485"
 
       define_method(:install) do
         bin.install "workledger"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.11.0/workledger_0.11.0_darwin_arm64.tar.gz"
-      sha256 "cf7144971bae659955c9675a64ed200f7d7d6116a3610382774ecbafc6f480d0"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.12.0/workledger_0.12.0_darwin_arm64.tar.gz"
+      sha256 "a010ddace261d205ff22485c16f39cd13bb7ed6530fb38458fbc70f0719de501"
 
       define_method(:install) do
         bin.install "workledger"
@@ -28,15 +28,15 @@ class Workledger < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.11.0/workledger_0.11.0_linux_amd64.tar.gz"
-      sha256 "71b3020debc3cd7b69da2510900adf89525d1181e76428e4d8c82bb362af25f8"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.12.0/workledger_0.12.0_linux_amd64.tar.gz"
+      sha256 "653d19902e02a7539a9e5cb88ea1fd739c82077b7ef887cba20e942dac6f5393"
       define_method(:install) do
         bin.install "workledger"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.11.0/workledger_0.11.0_linux_arm64.tar.gz"
-      sha256 "d3f680b25363c0811e463ce30529c3a1a8ea3e72ab8891ed39cab6fdee77a5e3"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.12.0/workledger_0.12.0_linux_arm64.tar.gz"
+      sha256 "504921f25054cfabb51b16195478c2297b792c17ec4702d1d36799c18f148524"
       define_method(:install) do
         bin.install "workledger"
       end
