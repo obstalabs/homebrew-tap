@@ -5,29 +5,29 @@
 class Workledger < Formula
   desc "Hiveram ledger plane for work orders, claims, release bundles, and WEO attribution"
   homepage "https://hiveram.com"
-  version "0.17.0"
+  version "0.18.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.17.0/workledger_0.17.0_darwin_amd64.tar.gz"
-      sha256 "157025f27030e4361ba1ff5df94fad4ae6a1e0441b50dbac3f4a58cb5f2e81ca"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.18.0/workledger_0.18.0_darwin_amd64.tar.gz"
+      sha256 "2be4d376207600da2d896ce368cba25b217dc17636d8c1068f0148aae3aa41ce"
     end
 
     on_arm do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.17.0/workledger_0.17.0_darwin_arm64.tar.gz"
-      sha256 "147bd373acd8dc13c926a1624da29c023ca51c072ecfc5da52d92c510123e336"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.18.0/workledger_0.18.0_darwin_arm64.tar.gz"
+      sha256 "7b9816c53b6dbd42559f798c430fda7d20db7d2a01037568909f4a65dbe58b2b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.17.0/workledger_0.17.0_linux_amd64.tar.gz"
-      sha256 "45d45284bbcb058ce922f71b3c60d824ce8635cb17a906388fd3452708cd1908"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.18.0/workledger_0.18.0_linux_amd64.tar.gz"
+      sha256 "04baf94c90e771e56cb7692889a4516d3852910aa453c01e7d4cbfa193002795"
     end
 
     on_arm do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.17.0/workledger_0.17.0_linux_arm64.tar.gz"
-      sha256 "8008d8327326ca0a18fd9319b553a12a700e9c9eb9658d5f26bb94703fb27d6f"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.18.0/workledger_0.18.0_linux_arm64.tar.gz"
+      sha256 "13e4fca5b978667e002a487750670c4b6b5e60c08a5165fc4fb78a488f5158ae"
     end
   end
 
