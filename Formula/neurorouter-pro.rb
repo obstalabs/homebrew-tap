@@ -8,25 +8,29 @@ class NeurorouterPro < Formula
   version "0.19.6"
   license "Proprietary"
 
-  on_macos do
-    on_intel do
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_darwin_amd64.tar.gz"
-      sha256 "814e6e5c0d99623c96f516eb1f46d4100ea72aa784575c81aac1bd7560376a30"
-    end
-    on_arm do
+  host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
+  host_arm = Hardware::CPU.arm? || host_cpu.match?(/arm|aarch64/i)
+  host_intel = Hardware::CPU.intel? || host_cpu.match?(/x86_64|amd64/i)
+
+  if OS.mac?
+    if host_arm
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_darwin_arm64.tar.gz"
       sha256 "dcc3232d40387b4a90aff31ade1b9f3f6a8b47965c59ee2e404257c64411bb96"
+    elsif host_intel
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_darwin_amd64.tar.gz"
+      sha256 "814e6e5c0d99623c96f516eb1f46d4100ea72aa784575c81aac1bd7560376a30"
+    else
+      raise "unsupported macOS CPU: #{host_cpu}"
     end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_linux_amd64.tar.gz"
-      sha256 "a85a84af793a110013ae0f05823dbe15443905bb5e501c9e4e6537e75e2bf6ee"
-    end
-    on_arm do
+  elsif OS.linux?
+    if host_arm
       url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_linux_arm64.tar.gz"
       sha256 "ca061f7c8ea77ed36b3d1b28d0ef2a1fa973a67754222e0fe854d89d9dd312fe"
+    elsif host_intel
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.19.6/neurorouter-pro_0.19.6_linux_amd64.tar.gz"
+      sha256 "a85a84af793a110013ae0f05823dbe15443905bb5e501c9e4e6537e75e2bf6ee"
+    else
+      raise "unsupported Linux CPU: #{host_cpu}"
     end
   end
 
