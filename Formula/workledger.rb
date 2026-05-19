@@ -5,29 +5,31 @@
 class Workledger < Formula
   desc "Hiveram ledger plane for work orders, claims, release bundles, and WEO attribution"
   homepage "https://hiveram.com"
-  version "0.25.0"
+  version "0.25.2"
 
-  on_macos do
-    on_intel do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.0/workledger_0.25.0_darwin_amd64.tar.gz"
-      sha256 "84cc049799e9f695cbf7c54d7e94226217fd5ba23f0334ff05993d9f3338b0d7"
+  host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
+  host_arm = Hardware::CPU.arm? || host_cpu.match?(/arm|aarch64/i)
+  host_intel = Hardware::CPU.intel? || host_cpu.match?(/x86_64|amd64/i)
+
+  if OS.mac?
+    if host_arm
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.2/workledger_0.25.2_darwin_arm64.tar.gz"
+      sha256 "080e6e4b795d8b78fddc6de286c71a779cda8a7884b728916aa0133570ebb84b"
+    elsif host_intel
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.2/workledger_0.25.2_darwin_amd64.tar.gz"
+      sha256 "f2c7c26f81b8a4d5d9924396ff5c945c3b100e1fe98bc389e94ee7a643f8026f"
+    else
+      raise "unsupported macOS CPU: #{host_cpu}"
     end
-
-    on_arm do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.0/workledger_0.25.0_darwin_arm64.tar.gz"
-      sha256 "ba9b3e400f5b7df22d4b986affefe8548cf200f63dd51a508f21a61f6a126cb8"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.0/workledger_0.25.0_linux_amd64.tar.gz"
-      sha256 "7a458d6c410cb17e3eaa20ae7ccb5d3ce15fffba306067444d3ac67c1812776b"
-    end
-
-    on_arm do
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.0/workledger_0.25.0_linux_arm64.tar.gz"
-      sha256 "675eac3716751cc1c8d2c75b2ffd555158cc6a961031e174c4b9a5abdf79bf3a"
+  elsif OS.linux?
+    if host_arm
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.2/workledger_0.25.2_linux_arm64.tar.gz"
+      sha256 "c3086613cc8599b690f36cf20de190f6b1bb14ebe7ee9aed5987ca789f0985f8"
+    elsif host_intel
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.2/workledger_0.25.2_linux_amd64.tar.gz"
+      sha256 "a9afb3d39ccbf11d7c0ab5e7202f7827a1c5247e6b608b262a812387892a909e"
+    else
+      raise "unsupported Linux CPU: #{host_cpu}"
     end
   end
 
