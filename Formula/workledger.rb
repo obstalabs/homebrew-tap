@@ -5,7 +5,7 @@
 class Workledger < Formula
   desc "Hiveram ledger plane for work orders, claims, release bundles, and WEO attribution"
   homepage "https://hiveram.com"
-  version "0.25.7"
+  version "0.25.9"
 
   host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
   host_arm = Hardware::CPU.arm? || host_cpu.match?(/arm|aarch64/i)
@@ -13,21 +13,21 @@ class Workledger < Formula
 
   if OS.mac?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.7/workledger_0.25.7_darwin_arm64.tar.gz"
-      sha256 "ab2a1ee90d646558bc4c5fdaed761278f37cfea9e0c2ff8ecaeffefbf5644661"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.9/workledger_0.25.9_darwin_arm64.tar.gz"
+      sha256 "9681275136016ae2127f0ecbfa19629ef1f79dfedc7dc1d623db234612b0644d"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.7/workledger_0.25.7_darwin_amd64.tar.gz"
-      sha256 "1b1faf870e733473677d9e16133fa1a3197f7b26f08a2b33ade0c6df3b09ec0a"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.9/workledger_0.25.9_darwin_amd64.tar.gz"
+      sha256 "a03d7fe2a9f52f4227a2a629ccadc7b3a3dbdb5ccfcfdad5d38c2437ab1799db"
     else
       raise "unsupported macOS CPU: #{host_cpu}"
     end
   elsif OS.linux?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.7/workledger_0.25.7_linux_arm64.tar.gz"
-      sha256 "19c426da18bd3874c1aa1dff70181361edbef8de07c487431c93b5fdaca0d269"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.9/workledger_0.25.9_linux_arm64.tar.gz"
+      sha256 "f7d63f5b22f1e569cb6fd82e8c1e0de11c110036f81ff6fc6bb66a54ef42da09"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.7/workledger_0.25.7_linux_amd64.tar.gz"
-      sha256 "1b37514c8a041958d0355870ad443c5489b63ca4daa481dbea55113f265b511f"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.25.9/workledger_0.25.9_linux_amd64.tar.gz"
+      sha256 "393520be51d6e97156d99294055dd5cd1f4b70d2eaab5a512bbe86046ba85b7d"
     else
       raise "unsupported Linux CPU: #{host_cpu}"
     end
