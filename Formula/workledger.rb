@@ -14,20 +14,20 @@ class Workledger < Formula
   if OS.mac?
     if host_arm
       url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.29.0/workledger_0.29.0_darwin_arm64.tar.gz"
-      sha256 "cbcd8fc48ffed15bab90a332ff3a9456e45c30761cb8f49268f78cd135b25b9e"
+      sha256 "01fea8bc318199c3494dd114e2fba6bb6c40ee1c827a79e6f9e80f4c59170aa3"
     elsif host_intel
       url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.29.0/workledger_0.29.0_darwin_amd64.tar.gz"
-      sha256 "a12f91d2559fd03bcf8f7be07b58e43a0a8921bcfaf21e591404b4f49272aa5e"
+      sha256 "ce803cc179fcdf3b69b463befe317f0ab61b32d706b282208684e3309f015669"
     else
       raise "unsupported macOS CPU: #{host_cpu}"
     end
   elsif OS.linux?
     if host_arm
       url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.29.0/workledger_0.29.0_linux_arm64.tar.gz"
-      sha256 "cdcc772d0a7d3347bf2e7b3a29218d4b87c596b9c6b00d29d660407495206431"
+      sha256 "1d057a64016fd3d2957e760c667ac8bdf942fc4f7178dfa91be2516bb8c4003f"
     elsif host_intel
       url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.29.0/workledger_0.29.0_linux_amd64.tar.gz"
-      sha256 "60f05d0fb06bdb2f6716b07a884890d15cb1fec58a7ef6d37546d09e25d5918c"
+      sha256 "4b908e8da5a1d49414bfd0b05a7f0661dea22cd0468721848be44f586014b073"
     else
       raise "unsupported Linux CPU: #{host_cpu}"
     end
