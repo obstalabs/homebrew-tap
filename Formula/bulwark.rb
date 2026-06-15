@@ -16,7 +16,7 @@ class Bulwark < Formula
       sha256 "1f0f5ac574970aa584f9f4567e9b84f855eb6fe825036a442f3642c0875585cc"
 
       define_method(:install) do
-        bin.install "bulwark-0.7.0-x86_64-apple-darwin/bulwark"
+        bin.install "bulwark"
       end
     end
     if Hardware::CPU.arm?
@@ -24,7 +24,7 @@ class Bulwark < Formula
       sha256 "07458e4e0ec1d62d091992b8c2545c864f57644f251ab724bcbee608f9a29671"
 
       define_method(:install) do
-        bin.install "bulwark-0.7.0-aarch64-apple-darwin/bulwark"
+        bin.install "bulwark"
       end
     end
   end
@@ -35,7 +35,7 @@ class Bulwark < Formula
       sha256 "374eb6a139c098a9fa30aa544976f0ecfe32f4c7f40cc73cb831d417da7c8693"
 
       define_method(:install) do
-        bin.install "bulwark-0.7.0-x86_64-unknown-linux-gnu/bulwark"
+        bin.install "bulwark"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
@@ -43,7 +43,7 @@ class Bulwark < Formula
       sha256 "e89d76ef09740fadb1548beed246480ce40dd0a581a9b9e1b4d5cdcfb111ab9f"
 
       define_method(:install) do
-        bin.install "bulwark-0.7.0-aarch64-unknown-linux-gnu/bulwark"
+        bin.install "bulwark"
       end
     end
   end
