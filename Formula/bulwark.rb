@@ -1,46 +1,48 @@
 # typed: false
 # frozen_string_literal: true
 
-# Homebrew formula for the bulwark CLI. The macOS Endpoint Security gate bundle
-# (signed, notarized, entitled .app) is distributed separately — this formula
-# ships only the portable CLI. See `bulwark doctor` for the macOS gate setup.
+# Homebrew formula for bulwark. On macOS the tarball is self-contained: the CLI plus
+# the signed + notarized Endpoint Security gate bundle, and the CLI finds the gate
+# automatically. On Linux the gate is fanotify (kernel built-in), so only the CLI ships.
 class Bulwark < Formula
   desc "Kernel-boundary file-read gate for AI agent process trees"
   homepage "https://obstalabs.dev/bulwark"
-  version "0.7.0"
+  version "0.7.1"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.0/bulwark-0.7.0-x86_64-apple-darwin.tar.gz"
-      sha256 "1f0f5ac574970aa584f9f4567e9b84f855eb6fe825036a442f3642c0875585cc"
+      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-x86_64-apple-darwin.tar.gz"
+      sha256 "7ecab35038be5431c932de986ed662f071d590c76188b652b98ef873a53f54a9"
 
       define_method(:install) do
         bin.install "bulwark"
+        libexec.install "bulwark_es_gate.app"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.0/bulwark-0.7.0-aarch64-apple-darwin.tar.gz"
-      sha256 "07458e4e0ec1d62d091992b8c2545c864f57644f251ab724bcbee608f9a29671"
+      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-aarch64-apple-darwin.tar.gz"
+      sha256 "5a4830c843e29a4d695dbb7d60a4818e84070c7c8eaa1f111de5ae690b742613"
 
       define_method(:install) do
         bin.install "bulwark"
+        libexec.install "bulwark_es_gate.app"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.0/bulwark-0.7.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "374eb6a139c098a9fa30aa544976f0ecfe32f4c7f40cc73cb831d417da7c8693"
+      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7f98df33d1b6a933fbf4f7ea99f4c51199bd72e9b36be1711dc74e26d189c640"
 
       define_method(:install) do
         bin.install "bulwark"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.0/bulwark-0.7.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e89d76ef09740fadb1548beed246480ce40dd0a581a9b9e1b4d5cdcfb111ab9f"
+      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1a45a7de1bc5921f935ef4921494be3e31ff4156169ac7b1478d0cc5de3ac35a"
 
       define_method(:install) do
         bin.install "bulwark"
@@ -53,14 +55,19 @@ class Bulwark < Formula
       Linux: the gate is fully functional (fanotify). Run as root for protected reads:
         sudo bulwark run --protect ~/.ssh -- <agent>
 
-      macOS: this installs the bulwark CLI. Kernel enforcement additionally requires
-      the signed Endpoint Security gate bundle (distributed separately — it is an
-      entitled, notarized .app and needs Full Disk Access + root). After installing
-      that bundle, point the CLI at it:
-        export BULWARK_MACOS_ES_GATE=/path/to/bulwark_es_gate.app/Contents/MacOS/bulwark_es_gate
+      macOS: kernel enforcement uses a signed Endpoint Security gate, installed with
+      this formula (the CLI finds it automatically — no setup needed).
 
-      Check your setup any time:
-        bulwark doctor
+      REQUIRED on macOS: grant Full Disk Access to your terminal app, or the gate
+      cannot start (you'll see "es_new_client failed: 4"). System Settings ->
+      Privacy & Security -> Full Disk Access -> add your terminal -> then fully quit
+      and reopen it.
+
+      Then (run as root):
+        sudo bulwark doctor
+        sudo bulwark run --protect ~/.ssh -- <agent>
+
+      Advanced: override the gate location with BULWARK_MACOS_ES_GATE if needed.
     EOS
   end
 
