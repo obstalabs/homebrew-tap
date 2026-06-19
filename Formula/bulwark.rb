@@ -67,6 +67,10 @@ class Bulwark < Formula
         sudo bulwark doctor
         sudo bulwark run --protect ~/.ssh -- <agent>
 
+      If sudo reports "bulwark: command not found", sudo's secure_path excludes
+      Homebrew's bin. Run it by full path:
+        sudo "$(brew --prefix)/bin/bulwark" doctor
+
       Advanced: override the gate location with BULWARK_MACOS_ES_GATE if needed.
     EOS
   end
