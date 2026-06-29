@@ -12,7 +12,7 @@ class Bulwark < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.7.1/bulwark-0.7.1-x86_64-apple-darwin.tar.gz"
       sha256 "7ecab35038be5431c932de986ed662f071d590c76188b652b98ef873a53f54a9"
 
       define_method(:install) do
@@ -21,7 +21,7 @@ class Bulwark < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.7.1/bulwark-0.7.1-aarch64-apple-darwin.tar.gz"
       sha256 "5a4830c843e29a4d695dbb7d60a4818e84070c7c8eaa1f111de5ae690b742613"
 
       define_method(:install) do
@@ -33,7 +33,7 @@ class Bulwark < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.7.1/bulwark-0.7.1-x86_64-unknown-linux-gnu.tar.gz"
       sha256 "7f98df33d1b6a933fbf4f7ea99f4c51199bd72e9b36be1711dc74e26d189c640"
 
       define_method(:install) do
@@ -41,7 +41,7 @@ class Bulwark < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark-dist/releases/download/v0.7.1/bulwark-0.7.1-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.7.1/bulwark-0.7.1-aarch64-unknown-linux-gnu.tar.gz"
       sha256 "1a45a7de1bc5921f935ef4921494be3e31ff4156169ac7b1478d0cc5de3ac35a"
 
       define_method(:install) do
