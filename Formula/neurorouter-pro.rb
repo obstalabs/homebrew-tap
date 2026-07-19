@@ -7,7 +7,7 @@ require "rbconfig"
 class NeurorouterPro < Formula
   desc "LLM proxy for session continuity and model routing"
   homepage "https://neurorouter.dev"
-  version "0.27.1"
+  version "0.28.0"
   license "Proprietary"
 
   host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
@@ -16,21 +16,21 @@ class NeurorouterPro < Formula
 
   if OS.mac?
     if host_arm
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.27.1/neurorouter-pro_0.27.1_darwin_arm64.tar.gz"
-      sha256 "a0a5e7a245fdfae7e7c8771c9a203606979f06feab27d92a5d74dbeff148de65"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.28.0/neurorouter-pro_0.28.0_darwin_arm64.tar.gz"
+      sha256 "6a8c9f7464a18ac55bfe2acaab1763491c6a81275231b0a502da7281f60e4a49"
     elsif host_intel
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.27.1/neurorouter-pro_0.27.1_darwin_amd64.tar.gz"
-      sha256 "f80774432830a7d8af4860296b9318128e44f7198448c7113b4e85146e05ee1d"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.28.0/neurorouter-pro_0.28.0_darwin_amd64.tar.gz"
+      sha256 "8a8ea08b1fba0b6d80f39aa34fae4c1542dc062d078e3438b01d4827af534a13"
     else
       raise "unsupported macOS CPU: #{host_cpu}"
     end
   elsif OS.linux?
     if host_arm
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.27.1/neurorouter-pro_0.27.1_linux_arm64.tar.gz"
-      sha256 "cdacac850f8af57e005f0be90d0a5ae39402be1090277922331c305834f4bbaa"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.28.0/neurorouter-pro_0.28.0_linux_arm64.tar.gz"
+      sha256 "b525f441da8b5cdf178eedd04999ea5e44df2ee095ac2b816066d3b95d3affd5"
     elsif host_intel
-      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.27.1/neurorouter-pro_0.27.1_linux_amd64.tar.gz"
-      sha256 "ceb6d21a8fb7dbbae53f89dd407f58cd581ef5157ecf7733fa29ccde304dab66"
+      url "https://github.com/obstalabs/neurorouter-pro-dist/releases/download/v0.28.0/neurorouter-pro_0.28.0_linux_amd64.tar.gz"
+      sha256 "2efcc7d5f67546a936ab294d2fa5ac2ffd7d5b369edf993bdc47bd77ded6970f"
     else
       raise "unsupported Linux CPU: #{host_cpu}"
     end
