@@ -5,7 +5,7 @@
 class Workledger < Formula
   desc "Hiveram ledger plane for work orders, claims, release bundles, and WEO attribution"
   homepage "https://hiveram.com"
-  version "0.55.20"
+  version "0.55.21"
 
   host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
   host_arm = Hardware::CPU.arm? || host_cpu.match?(/arm|aarch64/i)
@@ -13,21 +13,21 @@ class Workledger < Formula
 
   if OS.mac?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.20/workledger_0.55.20_darwin_arm64.tar.gz"
-      sha256 "8c173f74aecff29963c39de42012868bb944dfd587bc0e8d64941c71c2abe589"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.21/workledger_0.55.21_darwin_arm64.tar.gz"
+      sha256 "5d300cba840ae505020a49f9997c007ae72e8e1800d79493fcf1e1d24d1a98bf"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.20/workledger_0.55.20_darwin_amd64.tar.gz"
-      sha256 "efd6be2914d33c5030e908a60d78ba369f92eae906f64bf86e8c0e363a1a5959"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.21/workledger_0.55.21_darwin_amd64.tar.gz"
+      sha256 "d95c5f1203d472e8f24a00f6a5a22f452969e5ed6d73adc8a128128ffc04c7ef"
     else
       raise "unsupported macOS CPU: #{host_cpu}"
     end
   elsif OS.linux?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.20/workledger_0.55.20_linux_arm64.tar.gz"
-      sha256 "b10e62f9829aa0e69348d2bd30e9a60de91615e888165778a5b245fbde597797"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.21/workledger_0.55.21_linux_arm64.tar.gz"
+      sha256 "28286a20099bf89b2f4844a20302681066f722732d8e2926d65e82c7e77e905a"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.20/workledger_0.55.20_linux_amd64.tar.gz"
-      sha256 "4f16cacc6edabe84308fac42d8dcbf3b2883ea322d12d9c55f99fe35ce399931"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.55.21/workledger_0.55.21_linux_amd64.tar.gz"
+      sha256 "2208491e69d7d8f69bacd4a50901cd0b1cdba6343967ab03ab225df8af855a39"
     else
       raise "unsupported Linux CPU: #{host_cpu}"
     end
