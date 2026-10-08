@@ -7,13 +7,13 @@
 class Bulwark < Formula
   desc "Kernel-boundary file-read gate for AI agent process trees"
   homepage "https://obstalabs.dev/bulwark"
-  version "0.9.1"
+  version "0.9.2"
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.1/bulwark-0.9.1-x86_64-apple-darwin.tar.gz"
-      sha256 "a9561c54d983dbb542be515f1aa355fd358714dbdd3bff8d6878688a68f40f8a"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.2/bulwark-0.9.2-x86_64-apple-darwin.tar.gz"
+      sha256 "9fb12741ece1ede0438a79d6f4e3927bb00d52803c44072f0d8e25f11eb73d85"
 
       define_method(:install) do
         bin.install "bulwark"
@@ -21,8 +21,8 @@ class Bulwark < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.1/bulwark-0.9.1-aarch64-apple-darwin.tar.gz"
-      sha256 "fb7f7f765fbb6eca53bfd93bacb4deafc3af93d527343be671c48d21cb1fddde"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.2/bulwark-0.9.2-aarch64-apple-darwin.tar.gz"
+      sha256 "8b33bf25ff3967a156c2c26d2bb04fb48abd8987141c3fe28eebdbdbecdba77b"
 
       define_method(:install) do
         bin.install "bulwark"
@@ -33,16 +33,16 @@ class Bulwark < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.1/bulwark-0.9.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3ca51962c4ea2a93d21ccfa879e19f7e252d89717850e598c73f6d7675e62015"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.2/bulwark-0.9.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e6e0ba9dde888ae856b75122d8c28ae4c75042527d9e67bd77004242c759e2cd"
 
       define_method(:install) do
         bin.install "bulwark"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.1/bulwark-0.9.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "bcf2112969e84f2f140e495bf05e9507cb8e8239bfea6fa68ca074170f4d514c"
+      url "https://github.com/obstalabs/bulwark/releases/download/v0.9.2/bulwark-0.9.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "dd9ebf81c6c55ce29d9d996f8f53e33368f2afebca1b5bca645fb38975fdef2e"
 
       define_method(:install) do
         bin.install "bulwark"

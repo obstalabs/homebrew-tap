@@ -15,9 +15,9 @@
 cask "bulwark" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.9.1"
-  sha256 arm:   "a9a78bb568cf446932c14b9ea1f1be22eb43d616f1df078ff4389d84e2d9195e",
-         intel: "57ff037da0676f2671eaf1a61b8b29a6c6449bf012450aa2d5878edc05425be8"
+  version "0.9.2"
+  sha256 arm:   "8843f5efb179cb1cc9c59b390c9c9c38aa6a19076de3b4c1b5a10e8d6ebc9230",
+         intel: "436ef3322bf42432a8967e183db17f98679a00b1138502d6c22beb7e2b1847d7"
 
   url "https://github.com/obstalabs/bulwark/releases/download/v#{version}/bulwark-#{version}-#{arch}-apple-darwin.pkg"
   name "Bulwark"
