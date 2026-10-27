@@ -8,6 +8,11 @@ those bumps are recorded in git history.
 
 ## [Unreleased]
 
+## 2026-10-27
+
+### Changed
+- `workledger` formula ships 0.61.0.
+
 ## 2026-10-25
 
 ### Changed
