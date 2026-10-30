@@ -8,6 +8,13 @@ those bumps are recorded in git history.
 
 ## [Unreleased]
 
+## 2026-10-30
+
+### Changed
+- `bulwark` formula and cask bumped to 0.10.0. The macOS tarballs bundle a freshly
+  built, signed and notarized Endpoint Security gate app; the cask installs the signed,
+  notarized and stapled `.pkg`.
+
 ## 2026-10-27
 
 ### Changed
