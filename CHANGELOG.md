@@ -8,6 +8,13 @@ those bumps are recorded in git history.
 
 ## [Unreleased]
 
+## 2026-11-17
+
+### Changed
+- `bulwark` formula and cask bumped to 0.11.0. The formula's caveats now tell users to run
+  `install-root` once: from 0.11.0 bulwark refuses to run as root from the Homebrew prefix,
+  because a non-root user can modify it.
+
 ## 2026-10-30
 
 ### Changed
