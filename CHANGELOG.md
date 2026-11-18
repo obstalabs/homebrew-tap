@@ -8,6 +8,12 @@ those bumps are recorded in git history.
 
 ## [Unreleased]
 
+## 2026-11-18
+
+### Changed
+- `bulwark` formula and cask bumped to 0.11.1 (macOS: `install-root` now leaves the whole gate
+  bundle root-owned, so the installed engine starts its gate).
+
 ## 2026-11-17
 
 ### Changed
