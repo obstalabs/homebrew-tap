@@ -8,6 +8,13 @@ those bumps are recorded in git history.
 
 ## [Unreleased]
 
+## 2026-11-20
+
+### Changed
+- `bulwark` formula and cask bumped to 0.12.0 (a dropped agent gets its own `HOME`, `USER` and
+  `LOGNAME`; launcher descriptors are closed before the agent runs; macOS `install-root` verifies
+  the gate's code signature).
+
 ## 2026-11-18
 
 ### Changed
