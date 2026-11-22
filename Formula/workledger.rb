@@ -7,7 +7,7 @@ require "rbconfig"
 class Workledger < Formula
   desc "System of record for AI-assisted work: work orders, claims, evidence, sign-off"
   homepage "https://hiveram.com"
-  version "0.63.0"
+  version "0.63.1"
   license "Proprietary"
 
   host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
@@ -16,21 +16,21 @@ class Workledger < Formula
 
   if OS.mac?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.0/workledger_0.63.0_darwin_arm64.tar.gz"
-      sha256 "224b0190c7c18bd2ada812c9014fc4ef3277fbeefa04cfaca8b92c1235f1339c"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.1/workledger_0.63.1_darwin_arm64.tar.gz"
+      sha256 "5453854f8d747333e5c99a4416dd959002a27c92d98b8b24a8b9dec025adc14f"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.0/workledger_0.63.0_darwin_amd64.tar.gz"
-      sha256 "51904865d73b5e0d0aff9ceca0bb9fd26b75fe29acd2272fdd7488b5fc356cdc"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.1/workledger_0.63.1_darwin_amd64.tar.gz"
+      sha256 "8d36a514e99e139736dee98a8ba70954ccfcaf76589414efad53b9eff782e340"
     else
       raise "unsupported macOS CPU: #{host_cpu}"
     end
   elsif OS.linux?
     if host_arm
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.0/workledger_0.63.0_linux_arm64.tar.gz"
-      sha256 "a0e7a26e4f76af6880c7669402e4c92394f8247c7a4ca3cefefa56e746dd22fd"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.1/workledger_0.63.1_linux_arm64.tar.gz"
+      sha256 "db4a640bb5a92ed381f6810733b3548117186db6ea5283d3c6d4cbd047d564ee"
     elsif host_intel
-      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.0/workledger_0.63.0_linux_amd64.tar.gz"
-      sha256 "6f1d263cc99fa3820def115fb4f202d8633906c2b89595b23f95467d65c96312"
+      url "https://github.com/obstalabs/hiveram-dist/releases/download/v0.63.1/workledger_0.63.1_linux_amd64.tar.gz"
+      sha256 "d7d61ad217732954c53a02bc7a3a820f2b7dd99f8d10dcf8cbacf8a99c6dd54b"
     else
       raise "unsupported Linux CPU: #{host_cpu}"
     end
